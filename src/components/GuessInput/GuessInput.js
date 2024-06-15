@@ -22,10 +22,12 @@ function GuessInput() {
         required
         id="guess-input"
         type="text"
-        value={guess}
-        onChange={handleGuessInput}
+        minLength={5}
+        maxLength={5}
         pattern="[a-zA-Z]{5}"
         title="5 letter word"
+        value={guess}
+        onChange={handleGuessInput}
       ></input>
     </form>
   );
