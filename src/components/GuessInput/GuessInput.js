@@ -1,11 +1,18 @@
 import React, { useState } from "react";
 
-function GuessInput() {
+function GuessInput({ guesses, setGuesses }) {
   const [guess, setGuess] = useState("");
 
   function handleSubmit(event) {
     event.preventDefault();
     console.log({ guess });
+
+    const currentGuesses = [
+      ...guesses,
+      { id: crypto.randomUUID(), value: guess },
+    ];
+    setGuesses(currentGuesses);
+
     setGuess("");
   }
 
