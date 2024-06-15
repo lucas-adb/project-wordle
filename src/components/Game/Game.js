@@ -14,9 +14,7 @@ function Game() {
   const [guesses, setGuesses] = useState([]);
 
   function handleSubmitGuesses(tentativeGuesses) {
-    const nextGuess = { id: crypto.randomUUID(), value: tentativeGuesses };
-
-    setGuesses([...guesses, nextGuess]);
+    setGuesses([...guesses, tentativeGuesses]);
   }
 
   return (
