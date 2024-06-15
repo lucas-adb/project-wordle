@@ -13,10 +13,16 @@ console.info({ answer });
 function Game() {
   const [guesses, setGuesses] = useState([]);
 
+  function handleSubmitGuesses(tentativeGuesses) {
+    const newGuess = { id: crypto.randomUUID(), value: tentativeGuesses };
+
+    setGuesses([...guesses, newGuess]);
+  }
+
   return (
     <>
-      {guesses && <Guesses guesses={guesses} />}
-      <GuessInput guesses={guesses} setGuesses={setGuesses} />
+      <Guesses guesses={guesses} />
+      <GuessInput guesses={guesses} handleSubmitGuesses={handleSubmitGuesses} />
     </>
   );
 }
