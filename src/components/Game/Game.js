@@ -17,7 +17,6 @@ function Game() {
   // running | won | lost
   const [gameStatus, setGameStatus] = useState("running");
   const [guesses, setGuesses] = useState([]);
-  const [isCorrect, setIsCorrect] = useState(false);
 
   function handleSubmitGuess(tentativeGuess) {
     const nextGuesses = [...guesses, tentativeGuess];
