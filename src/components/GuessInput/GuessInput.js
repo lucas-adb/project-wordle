@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function GuessInput({ handleSubmitGuess }) {
+function GuessInput({ handleSubmitGuess, isCorrect }) {
   const [tentativeGuess, setTentativeGuess] = useState("");
 
   function handleSubmit(event) {
@@ -31,6 +31,7 @@ function GuessInput({ handleSubmitGuess }) {
         title="5 letter word"
         value={tentativeGuess}
         onChange={handleGuessInput}
+        disabled={isCorrect}
       ></input>
     </form>
   );
